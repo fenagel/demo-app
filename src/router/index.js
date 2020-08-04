@@ -13,18 +13,20 @@ const routes = [
     component: EventList
   },
   {
-    path: '/',
+    path: '/event/:id',
     name: 'event-show',
-    component: EventShow
+    component: EventShow,
+    props: true
   },
   {
-    path: '/',
+    path: '/event/create',
     name: 'event-create',
     component: EventCreate
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
