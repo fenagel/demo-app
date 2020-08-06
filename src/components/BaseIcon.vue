@@ -1,5 +1,10 @@
 <template>
-  <div class="icon-wrapper" v-html="svg"></div>
+  <div class="icon-wrapper">
+    <svg class="icon" :width="width" :height="height">
+      <use v-bind="{ 'xlink:href': '/feather-sprite.svg#' + name }" />
+    </svg>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -43,6 +48,6 @@ export default {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  margin-right: 6px;
+  margin-right: 8px;
 }
 </style>
